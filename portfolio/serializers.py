@@ -12,11 +12,11 @@ class InvestmentSerializer(serializers.ModelSerializer):
 
     class Meta:
             model = Investment
-            fields = ('pk','customer', 'category', 'description', 'acquired_value', 'acquired_date', 'recent_value', 'recent_date')
+            fields = ('pk','customer', 'cust_number', 'category', 'description', 'acquired_value', 'acquired_date', 'recent_value', 'recent_date')
 
 
 class StockSerializer(serializers.ModelSerializer):
 
     class Meta:
             model = Stock
-            fields = ('pk','customer', 'symbol', 'name', 'shares', 'purchase_price', 'purchase_date')
+            fields = ('pk','customer', 'cust_number', 'symbol', 'name', 'shares', 'purchase_price', 'purchase_date')

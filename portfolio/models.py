@@ -50,6 +50,9 @@ class Investment(models.Model):
     def results_by_investment(self):
         return self.recent_value - self.acquired_value
 
+    def cust_number(self):
+        return self.customer.cust_number
+
 class Stock(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='stocks')
     symbol = models.CharField(max_length=10)
@@ -67,3 +70,6 @@ class Stock(models.Model):
 
     def initial_stock_value(self):
         return self.shares * self.purchase_price
+
+    def cust_number(self):
+        return self.customer.cust_number
